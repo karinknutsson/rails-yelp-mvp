@@ -1,0 +1,13 @@
+<div class="nav-bar">
+  <h4><%= link_to "Add restaurant", new_restaurant_path %></h4>
+</div>
+
+<div class="index-content">
+  <h1>Restaurants!</h1>
+
+  <% @restaurants.each do |restaurant| %>
+    <div>
+      <h3><%= link_to restaurant.name, restaurant_path(restaurant.id) %></h3>
+    </div>
+  <% end %>
+</div>
