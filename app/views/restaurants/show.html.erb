@@ -1,14 +1,37 @@
 <div class="nav-bar">
-  <h4><%= link_to "Add restaurant", new_restaurant_path %></h4>
+  <div class="nav-content">
+    <h4><%= link_to "All restaurants", restaurants_path %></h4>
+    <h4><%= link_to "Add restaurant", new_restaurant_path %></h4>
+  </div>
 </div>
 
 <div class="show-content">
   <h2><%= @restaurant.name %></h2>
 
-  <div class="info-bar">
-    <%= @restaurant.address %>
-    <%= @restaurant.phone_number %>
-    <br>
-    Cuisine: <%= @restaurant.category.capitalize %>
+  <div class="restaurant-content">
+
+    <div class="info-bar">
+      <br>
+      Cuisine: <%= @restaurant.category.capitalize %>
+      <br>
+      <%= @restaurant.address %>
+      <%= @restaurant.phone_number %>
+      <br><br>
+      <h5><%= link_to "Review this restaurant", new_restaurant_review_path(@restaurant) %></h5>
+    </div>
+
+    <div class="review-content">
+      <% @restaurant.reviews.each do |review| %>
+        <% review.rating.times do %>
+          <%= image_tag('sun-solid.svg', size: '22') %>
+        <% end %>
+        <% if review.rating == 0 %>
+          <%= image_tag('ban-solid.svg', size: '22') %>
+        <% end %>
+        <p><%= review.content %></p>
+        <br>
+      <% end %>
+    </div>
+
   </div>
 </div>

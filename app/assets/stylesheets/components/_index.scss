@@ -13,7 +13,7 @@ body {
   background-color: white;
 }
 
-h1, h2, h3, h4, p, div {
+h1, h2, h3, h4, h5, p, div {
   font-family: "Work Sans", sans-serif;
 }
 
@@ -37,6 +37,11 @@ h4 {
   font-size: 24pt;
 }
 
+h5 {
+  font-weight: 700;
+  font-size: 20pt;
+}
+
 a, a:hover, a:active, a:visited {
   text-decoration: none;
 }
@@ -49,25 +54,61 @@ a:hover, a:active {
   color: $cotton-candy;
 }
 
-a.nav, a.nav:visited {
+input[type=text], input[type=tel], input[type=textarea] {
+  width: 100%;
+}
+
+textarea.form-control {
+  height: 200px;
+}
+
+input[type=submit] {
+  padding: 10px 32px;
   color: white;
+  font-weight: 600;
+  font-size: 15pt;
+  background-color: $plum-web;
+  border: 0;
+  border-radius: 3px;
+  float: right;
 }
 
 .nav-bar {
   padding: 20px;
   width: 100%;
   background-color: $honey-dew;
-  text-align: right;
+}
+
+.nav-content {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
 }
 
 .index-content {
   margin: 200px 0 100px 180px;
 }
 
+.form-content {
+  margin: 100px auto;
+  width: 600px;
+}
+
 .show-content {
   margin: 200px 0 100px 40px;
+  width: 90vw;
+}
+
+.restaurant-content {
+  display: flex;
+}
+
+.review-content {
+  margin: 130px 0 0 0;
+  width: 50%;
 }
 
 .info-bar {
+  width: 50%;
   font-size: 16pt;
 }
